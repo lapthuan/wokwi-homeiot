@@ -150,7 +150,7 @@ byte house4[8] = {
 byte d[8] = {0b00011, 0b00011, 0b00000, 0b00000, 0b00000, 0b00000, 0b00000, 0b00000};
 
 byte Lck[] = {B01110, B10001, B10001, B11111, B11011, B11011, B11111, B00000};
-int dem = 1;
+int dem = 0;
 #define pirPin 2
 #define Buzzer 33
 #define BuzzerFlame 35
@@ -229,6 +229,7 @@ void setup()
     lcd.setCursor(6, 2);
     lcd.print("USING IOT");
     delay(500);
+    Firebase.deleteNode(fbdo, "/iotdata/dht/");
 }
 
 void loop()
